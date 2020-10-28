@@ -1,0 +1,30 @@
+@author: Samip
+"""
+
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn import preprocessing 
+import seaborn as sns
+import matplotlib
+import matplotlib.pyplot as plt
+import plotly.express as px
+import squarify
+import reverse_geocoder as rg 
+import pprint 
+from pygeocoder import Geocoder
+import geopandas
+
+df = pd.read_csv("earthquake.csv")
+print(df)
+print(df.shape)
+print(df.dtype)
+print(df.columns.values)
+
+print("Nan in each columns" , df.isnull().sum(), sep='\n')
+
+Column_name = df.groupby('colname').colname.count()
+print("colname",Column_name)
